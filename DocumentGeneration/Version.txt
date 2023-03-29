@@ -1,0 +1,5 @@
+﻿Versions
+
+version 2.0.0.0 dated 24-02-2016 by KJ		
+		Erweiterung spezial Mitschuldner Token
+		Token wird immer gelesen ALG_BEZST_PLZ - für Gruppenwechsel Serientermin

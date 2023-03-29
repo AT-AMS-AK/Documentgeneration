@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AuthService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.140.4.71:83/Services/AuthenticationService/AuthService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.140.4.71:83/Services/AuthenticationService/AuthService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.140.4.71:83/Services/AuthenticationService/AuthService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.Authentication" />
+      <xsd:import schemaLocation="http://10.140.4.71:83/Services/AuthenticationService/AuthService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://10.140.4.71:83/Services/AuthenticationService/AuthService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAuthService_getAllSessions_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSessions" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getAllSessions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSessionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserById" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:doLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doSSOLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:doSSOLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doSSOLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doSSOLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUser" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSetting" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_setPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_setPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_updateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUser" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_updateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_insertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertUser" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_insertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getAllSignatures_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSignatures" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getAllSignatures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSignaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getSignature_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSignature" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_getSignature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_saveSignature_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveSignature" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_saveSignature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveSignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_startSignatureTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:startSignatureTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_startSignatureTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:startSignatureTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_transferSignatureData_InputMessage">
+    <wsdl:part name="parameters" element="tns:transferSignatureData" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_transferSignatureData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:transferSignatureDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doLoginWithApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:doLoginWithApp" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doLoginWithApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doLoginWithAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doSSOLoginWithApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:doSSOLoginWithApp" />
+  </wsdl:message>
+  <wsdl:message name="IAuthService_doSSOLoginWithApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doSSOLoginWithAppResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAuthService">
+    <wsdl:operation name="getAllSessions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/getAllSessions" message="tns:IAuthService_getAllSessions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/getAllSessionsResponse" message="tns:IAuthService_getAllSessions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/getUserById" message="tns:IAuthService_getUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/getUserByIdResponse" message="tns:IAuthService_getUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/doLogin" message="tns:IAuthService_doLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/doLoginResponse" message="tns:IAuthService_doLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doSSOLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/doSSOLogin" message="tns:IAuthService_doSSOLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/doSSOLoginResponse" message="tns:IAuthService_doSSOLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/getUser" message="tns:IAuthService_getUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/getUserResponse" message="tns:IAuthService_getUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/getSetting" message="tns:IAuthService_getSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/getSettingResponse" message="tns:IAuthService_getSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/getAllUsers" message="tns:IAuthService_getAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/getAllUsersResponse" message="tns:IAuthService_getAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/setPassword" message="tns:IAuthService_setPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/setPasswordResponse" message="tns:IAuthService_setPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/updateUser" message="tns:IAuthService_updateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/updateUserResponse" message="tns:IAuthService_updateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/insertUser" message="tns:IAuthService_insertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/insertUserResponse" message="tns:IAuthService_insertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllSignatures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/getAllSignatures" message="tns:IAuthService_getAllSignatures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/getAllSignaturesResponse" message="tns:IAuthService_getAllSignatures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSignature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/getSignature" message="tns:IAuthService_getSignature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/getSignatureResponse" message="tns:IAuthService_getSignature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveSignature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/saveSignature" message="tns:IAuthService_saveSignature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/saveSignatureResponse" message="tns:IAuthService_saveSignature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="startSignatureTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/startSignatureTransfer" message="tns:IAuthService_startSignatureTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/startSignatureTransferResponse" message="tns:IAuthService_startSignatureTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="transferSignatureData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/transferSignatureData" message="tns:IAuthService_transferSignatureData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/transferSignatureDataResponse" message="tns:IAuthService_transferSignatureData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doLoginWithApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/doLoginWithApp" message="tns:IAuthService_doLoginWithApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/doLoginWithAppResponse" message="tns:IAuthService_doLoginWithApp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doSSOLoginWithApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthService/doSSOLoginWithApp" message="tns:IAuthService_doSSOLoginWithApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthService/doSSOLoginWithAppResponse" message="tns:IAuthService_doSSOLoginWithApp_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAuthService" type="tns:IAuthService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllSessions">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/getAllSessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserById">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/getUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doLogin">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/doLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSSOLogin">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/doSSOLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/getUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSetting">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/getSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/getAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPassword">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/setPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/updateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertUser">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/insertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSignatures">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/getAllSignatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignature">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/getSignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveSignature">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/saveSignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="startSignatureTransfer">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/startSignatureTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferSignatureData">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/transferSignatureData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doLoginWithApp">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/doLoginWithApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSSOLoginWithApp">
+      <soap:operation soapAction="http://tempuri.org/IAuthService/doSSOLoginWithApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthService">
+    <wsdl:port name="BasicHttpBinding_IAuthService" binding="tns:BasicHttpBinding_IAuthService">
+      <soap:address location="http://10.140.4.71:83/Services/AuthenticationService/AuthService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

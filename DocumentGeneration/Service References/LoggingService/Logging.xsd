@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.Logging" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.Logging" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="LogType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INFO" />
+      <xs:enumeration value="WARNING" />
+      <xs:enumeration value="ERROR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LogType" nillable="true" type="tns:LogType" />
+  <xs:simpleType name="Source">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DATA_SERVICE" />
+      <xs:enumeration value="DOCUMENT_GENERATION_SERVICE" />
+      <xs:enumeration value="BANK_RECORD_CARRIER_SERVICE" />
+      <xs:enumeration value="AUTHENTICATION_SERVICE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Source" nillable="true" type="tns:Source" />
+  <xs:simpleType name="SHORTCODE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DA" />
+      <xs:enumeration value="DE" />
+      <xs:enumeration value="AD" />
+      <xs:enumeration value="EX" />
+      <xs:enumeration value="AU" />
+      <xs:enumeration value="DG" />
+      <xs:enumeration value="BC" />
+      <xs:enumeration value="NONE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SHORTCODE" nillable="true" type="tns:SHORTCODE" />
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExeptionMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ResponseMsg" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+  <xs:simpleType name="ENVIRONMENT">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WBD" />
+      <xs:enumeration value="ANF" />
+      <xs:enumeration value="AK_SHARED_SERVICES" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ENVIRONMENT" nillable="true" type="tns:ENVIRONMENT" />
+</xs:schema>
